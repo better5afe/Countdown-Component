@@ -5,3 +5,23 @@
 body {
 	font-family: 'Red Hat Text', sans-serif;
 }
+
+main {
+	background-image: url('./assets/images/bg-stars.svg');
+}
+
+.bottom-pattern {
+	background-image: url('./assets/images/pattern-hills.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+a svg path {
+	transition: fill 0.3s;
+}
+
+a:hover svg path,
+a:focus svg path {
+	fill: hsl(237, 28%, 70%);
+}
