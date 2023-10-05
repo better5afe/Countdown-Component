@@ -1,0 +1,6 @@
+{
+	"short_name": "Coundown component",
+	"name": "Coundown component",
+	"start_url": ".",
+	"display": "standalone"
+}
