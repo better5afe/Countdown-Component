@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	font-size: 62.5%;
+}
+
 body {
 	font-family: 'Red Hat Text', sans-serif;
 }
 
 main {
 	background-image: url('./assets/images/bg-stars.svg');
+}
+
+.counter-card {
+	box-shadow: 0px 4px 0px 0px hsl(234, 17%, 12%);
+}
+
+.counter-card::before,
+.counter-card::after {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 8px;
+	width: 8px;
+	background: hsl(234, 17%, 12%);
+	border-radius: 50%;
+	content: '';
+}
+
+.counter-card::before {
+	left: -4px;
+}
+
+.counter-card::after {
+	right: -4px;
 }
 
 .bottom-pattern {
@@ -24,4 +52,40 @@ a svg path {
 a:hover svg path,
 a:focus svg path {
 	fill: hsl(237, 28%, 70%);
+}
+
+@media (min-width: 768px) {
+	.counter-card {
+		box-shadow: 0px 8px 0px 0px hsl(234, 17%, 12%);
+	}
+
+	.counter-card::before,
+	.counter-card::after {
+		height: 12px;
+		width: 12px;
+	}
+
+	.counter-card::before {
+		left: -6px;
+	}
+
+	.counter-card::after {
+		right: -6px;
+	}
+}
+
+@media (min-width: 1280px) {
+	.counter-card::before,
+	.counter-card::after {
+		height: 20px;
+		width: 20px;
+	}
+
+	.counter-card::before {
+		left: -10px;
+	}
+
+	.counter-card::after {
+		right: -10px;
+	}
 }

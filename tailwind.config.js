@@ -8,7 +8,7 @@ module.exports = {
 				softRed: 'hsl(345, 95%, 68%)',
 				darkDesBlue: 'hsl(236, 21%, 26%)',
 				darkBlue: 'hsl(235, 16%, 14%)',
-				varyDarkBlue: 'hsl(234, 17%, 12%)',
+				veryDarkBlue: 'hsl(234, 17%, 12%)',
 			},
 		},
 	},
