@@ -1,4 +1,4 @@
-import CounterCard from '../reusable/CounterCard';
+import CounterCard from './CounterCard';
 
 const Counter = () => {
 	return (

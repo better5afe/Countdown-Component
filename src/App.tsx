@@ -15,26 +15,26 @@ const App = () => {
 			const remainingTime = countdownDate.getTime() - currentDate.getTime();
 
 			if (remainingTime > 0) {
-				const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-				const hours = Math.floor(
+				let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+				let hours = Math.floor(
 					(remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
 				);
-				const minutes = Math.floor(
+				let minutes = Math.floor(
 					(remainingTime % (1000 * 60 * 60)) / (1000 * 60)
 				);
-				const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+				let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
 				dispatch(setCountdown({ days, hours, minutes, seconds }));
 			} else {
-				clearInterval(intervalId);
+				clearInterval(interval);
 			}
 		};
 
-		const intervalId = setInterval(updateCountdown, 1000);
+		const interval = setInterval(updateCountdown, 1000);
 
 		updateCountdown();
 
-		return () => clearInterval(intervalId);
+		return () => clearInterval(interval);
 	}, []);
 
 	return (

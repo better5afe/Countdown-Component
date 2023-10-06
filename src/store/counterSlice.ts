@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ActionInterface } from '../models/types';
 
 const initialState = {
 	countdown: {
@@ -13,7 +14,7 @@ const counterSlice = createSlice({
 	name: 'counter',
 	initialState,
 	reducers: {
-		setCountdown: (state, action) => {
+		setCountdown: (state, action: ActionInterface) => {
 			state.countdown = action.payload;
 		},
 	},
