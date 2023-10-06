@@ -1,6 +1,6 @@
 const CardDivider = () => {
 	return (
-		<div className='absolute w-full h-[1px] bg-darkBlue opacity-30'></div>
+		<div className='absolute w-full h-[1px] bg-darkBlue opacity-30 z-30'></div>
 	);
 };
 

@@ -47,6 +47,7 @@ main {
 .card-top {
 	animation: fold-hide 1s linear;
 	transform-origin: bottom;
+	opacity: 0;
 }
 
 .card-bottom {
@@ -74,6 +75,7 @@ a:focus svg path {
 
 @keyframes fold-hide {
 	5% {
+		background-color: hsl(233, 19%, 19%);
 		opacity: 1;
 	}
 
@@ -113,21 +115,13 @@ a:focus svg path {
 	}
 
 	50% {
-		background-color: hsl(
-			233,
-			19%,
-			19%
-		);
+		background-color: hsl(233, 19%, 19%);
 		transform: rotateX(-90deg);
 		opacity: 1;
 	}
 
 	75% {
-		background-color: hsl(
-			233,
-			19%,
-			19%
-		);
+		background-color: hsl(233, 19%, 19%);
 		transform: rotateX(-45deg);
 		opacity: 1;
 	}
