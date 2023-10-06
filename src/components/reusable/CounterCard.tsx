@@ -6,7 +6,7 @@ const CounterCard = () => {
 	return (
 		<>
 			<div>
-				<div className='counter-card relative flex justify-center items-center w-[7.5rem] h-[7.5rem] sm:w-[10rem] sm:h-[10rem] md:w-[13rem] md:h-[13rem] lg:w-[15rem] lg:h-[15rem] xl:w-[20rem] xl:h-[20rem]  mx-1 md:mx-3 lg:mx-10 bg-darkDesBlue rounded-lg overflow-hidden	'>
+				<div className='counter-card animated relative flex justify-center items-center w-[7.5rem] h-[7.5rem] sm:w-[10rem] sm:h-[10rem] md:w-[13rem] md:h-[13rem] lg:w-[15rem] lg:h-[15rem] xl:w-[20rem] xl:h-[20rem]  mx-1 md:mx-3 lg:mx-10 bg-darkDesBlue rounded-lg overflow-hidden	'>
 					<CounterNumber value='08' />
 					<CardDivider />
 				</div>

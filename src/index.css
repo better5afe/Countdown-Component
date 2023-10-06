@@ -28,6 +28,7 @@ main {
 	background: hsl(234, 17%, 12%);
 	border-radius: 50%;
 	content: '';
+	z-index: 20;
 }
 
 .counter-card::before {
@@ -36,6 +37,23 @@ main {
 
 .counter-card::after {
 	right: -4px;
+}
+
+.card-top,
+.card-bottom {
+	perspective: 800px;
+}
+
+.card-top {
+	animation: fold-hide 1s linear;
+	transform-origin: bottom;
+}
+
+.card-bottom {
+	transform: rotateX(-180deg);
+	animation: fold-show 1s linear;
+	transform-origin: top;
+	opacity: 0;
 }
 
 .bottom-pattern {
@@ -52,6 +70,72 @@ a svg path {
 a:hover svg path,
 a:focus svg path {
 	fill: hsl(237, 28%, 70%);
+}
+
+@keyframes fold-hide {
+	5% {
+		opacity: 1;
+	}
+
+	30% {
+		background-color: hsl(233, 19%, 19%);
+		opacity: 1;
+	}
+
+	50% {
+		background-color: hsl(233, 19%, 19%);
+		transform: rotateX(90deg);
+		opacity: 1;
+	}
+
+	55% {
+		background-color: hsl(233, 19%, 19%);
+		transform: rotateX(90deg);
+		opacity: 0;
+	}
+
+	100% {
+		transform: rotateX(90deg);
+		opacity: 0;
+	}
+}
+
+@keyframes fold-show {
+	0% {
+		background-color: hsl(233, 19%, 19%);
+		opacity: 0;
+		transform: rotateX(-180deg);
+	}
+
+	49% {
+		background-color: hsl(233, 19%, 19%);
+		opacity: 0;
+	}
+
+	50% {
+		background-color: hsl(
+			233,
+			19%,
+			19%
+		);
+		transform: rotateX(-90deg);
+		opacity: 1;
+	}
+
+	75% {
+		background-color: hsl(
+			233,
+			19%,
+			19%
+		);
+		transform: rotateX(-45deg);
+		opacity: 1;
+	}
+
+	100% {
+		transform: rotateX(0);
+		opacity: 1;
+	}
 }
 
 @media (min-width: 768px) {
