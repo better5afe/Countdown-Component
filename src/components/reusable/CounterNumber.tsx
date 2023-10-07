@@ -1,7 +1,7 @@
 import { CounterNumberProps } from '../../models/types';
 
 const CounterNumber: React.FC<CounterNumberProps> = ({ value, isAnimated }) => {
-	let number;
+let number;
 
 	if (value >= 0 && value <= 9) {
 		number = `0${value}`;

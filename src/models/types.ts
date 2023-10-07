@@ -6,3 +6,7 @@ export interface CounterNumberProps {
 export interface CardTitleProps {
 	text: string;
 }
+
+export interface CounterCardProps {
+	countdownDate: Date;
+}

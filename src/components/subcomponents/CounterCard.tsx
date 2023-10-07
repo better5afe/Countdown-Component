@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react';
+import { CounterCardProps } from '../../models/types';
 import CounterNumber from '../reusable/CounterNumber';
 import CardDivider from '../reusable/CardDivider';
 import CardTitle from '../reusable/CardTitle';
-
-interface CounterCardProps {
-	countdownDate: Date;
-}
 
 const CounterCard: React.FC<CounterCardProps> = ({ countdownDate }) => {
 	const [days, setDays] = useState(0);
@@ -16,7 +13,7 @@ const CounterCard: React.FC<CounterCardProps> = ({ countdownDate }) => {
 	const [animateDays, setAnimateDays] = useState(false);
 	const [animateHours, setAnimateHours] = useState(false);
 	const [animateMinutes, setAnimateMinutes] = useState(false);
-	const [animateSeconds, setAnimateSeconds] = useState(true);
+	const [animateSeconds] = useState(true);
 
 	useEffect(() => {
 		updateCountdown();
@@ -41,14 +38,14 @@ const CounterCard: React.FC<CounterCardProps> = ({ countdownDate }) => {
 			);
 			let countdownSeconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
 
+			setAnimateDays(false);
+			setAnimateHours(false);
+			setAnimateMinutes(false);
+
 			setDays(countdownDays);
 			setHours(countdownHours);
 			setMinutes(countdownMinutes);
 			setSeconds(countdownSeconds);
-
-			setAnimateDays(false);
-			setAnimateHours(false);
-			setAnimateMinutes(false);
 
 			if (countdownDays !== days && days !== 0) {
 				setDays(countdownDays);

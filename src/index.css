@@ -41,25 +41,26 @@ main {
 
 .card-top,
 .card-bottom {
-	perspective: 800px;
+	perspective: 1000px;
 }
 
 .card-top {
 	transform-origin: bottom;
-	opacity: 0;
+	opacity: 1;
 }
 
 .card-bottom {
-	transform: rotateX(-180deg);
 	transform-origin: top;
-	opacity: 0;
+	opacity: 1;
 }
 
 .animated-top {
-	animation: fold-hide 1s linear;
+	animation: fold-hide 1s linear forwards;
+	backface-visibility: hidden;
 }
 .animated-bottom {
-	animation: fold-show 1s linear;
+	animation: fold-show 1s linear forwards;
+	backface-visibility: hidden;
 }
 
 .bottom-pattern {
@@ -79,59 +80,70 @@ a:focus svg path {
 }
 
 @keyframes fold-hide {
-	5% {
-		background-color: hsl(233, 19%, 19%);
-		opacity: 1;
-	}
-
 	30% {
-		background-color: hsl(233, 19%, 19%);
 		opacity: 1;
 	}
 
-	50% {
+	35% {
+		box-shadow: inset 0px 8px 0px 0px hsl(234, 17%, 12%);
+		opacity: 1;
+	}
+
+	60% {
 		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px 8px 0px 0px hsl(234, 17%, 12%);
+		opacity: 1;
+	}
+
+	80% {
+		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px 8px 0px 0px hsl(234, 17%, 12%);
 		transform: rotateX(90deg);
 		opacity: 1;
 	}
 
-	55% {
+	85% {
 		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px 8px 0px 0px hsl(234, 17%, 12%);
 		transform: rotateX(90deg);
-		opacity: 0;
+		opacity: 1;
 	}
 
 	100% {
 		transform: rotateX(90deg);
-		opacity: 0;
+		opacity: 1;
 	}
 }
 
 @keyframes fold-show {
 	0% {
 		background-color: hsl(233, 19%, 19%);
-		opacity: 0;
+		opacity: 1;
 		transform: rotateX(-180deg);
 	}
 
-	49% {
+	69% {
 		background-color: hsl(233, 19%, 19%);
-		opacity: 0;
-	}
-
-	50% {
-		background-color: hsl(233, 19%, 19%);
-		transform: rotateX(-90deg);
 		opacity: 1;
 	}
 
 	75% {
 		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px -8px 0px 0px hsl(234, 17%, 12%);
+		transform: rotateX(-90deg);
+		opacity: 1;
+	}
+
+	95% {
+		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px -8px 0px 0px hsl(234, 17%, 12%);
 		transform: rotateX(-45deg);
 		opacity: 1;
 	}
 
 	100% {
+		background-color: hsl(233, 19%, 19%);
+		box-shadow: inset 0px -8px 0px 0px hsl(234, 17%, 12%);
 		transform: rotateX(0);
 		opacity: 1;
 	}
