@@ -45,16 +45,21 @@ main {
 }
 
 .card-top {
-	animation: fold-hide 1s linear;
 	transform-origin: bottom;
 	opacity: 0;
 }
 
 .card-bottom {
 	transform: rotateX(-180deg);
-	animation: fold-show 1s linear;
 	transform-origin: top;
 	opacity: 0;
+}
+
+.animated-top {
+	animation: fold-hide 1s linear;
+}
+.animated-bottom {
+	animation: fold-show 1s linear;
 }
 
 .bottom-pattern {
@@ -166,4 +171,45 @@ a:focus svg path {
 	.counter-card::after {
 		right: -10px;
 	}
+}
+
+.card-top,
+.card-bottom {
+	animation-iteration-count: infinite;
+}
+
+.card-top::after,
+.card-bottom::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	animation: reset-animation 1ms infinite;
+}
+
+@keyframes reset-animation {
+	from {
+		transform: translateZ(0);
+	}
+	to {
+		transform: translateZ(0);
+	}
+}
+
+/* Nadaj zdarzenie animationiteration */
+.card-top::after,
+.card-bottom::after {
+	animation-delay: 1s; /* Opóźnienie na początku */
+	animation-duration: 1ms; /* Bardzo krótka animacja */
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-name: reset-animation;
+}
+
+/* Resetowanie zdarzenia animationiteration po 1ms, aby mogło działać za każdym razem */
+.card-top::after,
+.card-bottom::after {
+	animation-delay: 1ms;
 }
