@@ -13,7 +13,7 @@ const CounterCard: React.FC<CounterCardProps> = ({ countdownDate }) => {
 	const [animateDays, setAnimateDays] = useState(false);
 	const [animateHours, setAnimateHours] = useState(false);
 	const [animateMinutes, setAnimateMinutes] = useState(false);
-	const [animateSeconds] = useState(true);
+	const [animateSeconds, setAnimateSeconds] = useState(false);
 
 	useEffect(() => {
 		updateCountdown();
@@ -41,6 +41,7 @@ const CounterCard: React.FC<CounterCardProps> = ({ countdownDate }) => {
 			setAnimateDays(false);
 			setAnimateHours(false);
 			setAnimateMinutes(false);
+			setAnimateSeconds(true);
 
 			setDays(countdownDays);
 			setHours(countdownHours);
